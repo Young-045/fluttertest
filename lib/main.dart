@@ -176,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () async {
                         var result = await showDateRangePicker(
                             context: context,
-                            firstDate: DateTime(2020),
+                            firstDate: DateTime(2000),
                             lastDate: DateTime(2023));
                         print('$result');
                       },
