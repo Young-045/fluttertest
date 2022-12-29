@@ -182,7 +182,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         print('123');
                         print('123');
                         print('123');
-                        print('123');
                       },
                       child: const Text('flutterDatepicker'),
                     ),
