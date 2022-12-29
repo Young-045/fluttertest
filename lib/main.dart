@@ -24,9 +24,12 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('zh'),
+        Locale.fromSubtags(
+            languageCode: 'zh',
+            scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
       ],
       locale: const Locale('zh'),
       title: 'Startup Name Generator',

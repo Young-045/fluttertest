@@ -38,7 +38,7 @@ class _CartesianChartState extends State<CartesianChart> {
         primaryXAxis: CategoryAxis(),
         // Chart title
         title: ChartTitle(
-            text: '数据展示',
+            text: 'test',
             backgroundColor: Colors.lightBlue,
             borderColor: Colors.green,
             borderWidth: 2,
