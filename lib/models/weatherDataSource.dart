@@ -39,14 +39,14 @@ class WeatherDataSource extends DataGridSource {
                   columnName: 'solarenergy', value: dataGridRow.solarenergy),
               DataGridCell<double>(
                   columnName: 'uvindex', value: dataGridRow.uvindex),
-              DataGridCell<double>(
-                  columnName: 'severerisk', value: dataGridRow.severerisk),
-              DataGridCell<String>(
-                  columnName: 'sunrise', value: dataGridRow.sunrise),
-              DataGridCell<String>(
-                  columnName: 'sunset', value: dataGridRow.sunset),
-              DataGridCell<String>(
-                  columnName: 'description', value: dataGridRow.description),
+              // DataGridCell<double>(
+              //     columnName: 'severerisk', value: dataGridRow.severerisk),
+              // DataGridCell<String>(
+              //     columnName: 'sunrise', value: dataGridRow.sunrise),
+              // DataGridCell<String>(
+              //     columnName: 'sunset', value: dataGridRow.sunset),
+              // DataGridCell<String>(
+              //     columnName: 'description', value: dataGridRow.description),
             ]))
         .toList();
   }

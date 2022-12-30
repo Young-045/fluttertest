@@ -186,42 +186,42 @@ class _WeatherGridViewRouteState extends State<WeatherGridViewRoute> {
                           'uvindex',
                           overflow: TextOverflow.ellipsis,
                         ))),
-                GridColumn(
-                    columnName: 'severerisk',
-                    label: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        alignment: Alignment.centerRight,
-                        child: const Text(
-                          'severerisk',
-                          overflow: TextOverflow.ellipsis,
-                        ))),
-                GridColumn(
-                    columnName: 'sunrise',
-                    label: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        alignment: Alignment.centerRight,
-                        child: const Text(
-                          'sunrise',
-                          overflow: TextOverflow.ellipsis,
-                        ))),
-                GridColumn(
-                    columnName: 'sunset',
-                    label: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        alignment: Alignment.centerRight,
-                        child: const Text(
-                          'sunset',
-                          overflow: TextOverflow.ellipsis,
-                        ))),
-                GridColumn(
-                    columnName: 'description',
-                    label: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        alignment: Alignment.centerRight,
-                        child: const Text(
-                          'description',
-                          overflow: TextOverflow.ellipsis,
-                        ))),
+                // GridColumn(
+                //     columnName: 'severerisk',
+                //     label: Container(
+                //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                //         alignment: Alignment.centerRight,
+                //         child: const Text(
+                //           'severerisk',
+                //           overflow: TextOverflow.ellipsis,
+                //         ))),
+                // GridColumn(
+                //     columnName: 'sunrise',
+                //     label: Container(
+                //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                //         alignment: Alignment.centerRight,
+                //         child: const Text(
+                //           'sunrise',
+                //           overflow: TextOverflow.ellipsis,
+                //         ))),
+                // GridColumn(
+                //     columnName: 'sunset',
+                //     label: Container(
+                //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                //         alignment: Alignment.centerRight,
+                //         child: const Text(
+                //           'sunset',
+                //           overflow: TextOverflow.ellipsis,
+                //         ))),
+                // GridColumn(
+                //     columnName: 'description',
+                //     label: Container(
+                //         padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                //         alignment: Alignment.centerRight,
+                //         child: const Text(
+                //           'description',
+                //           overflow: TextOverflow.ellipsis,
+                //         ))),
               ],
             );
           } else if (snapshot.hasError) {
