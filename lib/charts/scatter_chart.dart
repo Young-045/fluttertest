@@ -19,15 +19,15 @@ class _ScatterChartState extends State<ScatterChart> {
   late List<ScatterView> _scatterData;
 
   @override
-  void initState() async {
+  void initState() {
     _tooltipBehavior = TooltipBehavior(enable: true);
-    _scatterData = await getData();
+    _scatterData = getData();
     super.initState();
   }
 
-  Future<List<ScatterView>> getData() async {
+  List<ScatterView> getData() {
     List<ScatterView> datas = [];
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 1000; i++) {
       var a = Random().nextInt(1000);
       datas.add(ScatterView(i.toString(), a));
     }

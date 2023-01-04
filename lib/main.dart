@@ -3,8 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:fluttertest/charts/scatter_chart.dart';
 import 'package:fluttertest/models/weather.dart';
 import 'charts/cartesian_chart.dart';
+import 'views/datatable.dart';
+import 'views/datatablefast.dart';
+import 'views/hello_route.dart';
 import 'views/weather_gridview_route.dart';
 import 'web/weather_dal.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -37,6 +41,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MyHomePage(title: 'MyHomePage'),
         'weather_gridview': (context) => const WeatherGridViewRoute(),
+        'hello': (context) => const HelloRoute(),
+        'datatable': (context) => const DataTableRoute(),
+        'datatablefast': (context) => const DataTableFastRoute(),
       },
     );
   }
@@ -55,6 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String type2 = list.first;
   String type3 = list.first;
   late Future<Weather> futureWeather;
+  late List<String> _test;
+  late List<Days> _days;
   void _selectedOneChanged(String? value) {
     setState(() {
       type1 = value!;
@@ -77,6 +86,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     futureWeather = fetchWeather();
+    _test = [];
+    for (int i = 0; i < 1000; i++) {
+      _test.add(i.toString());
+    }
   }
 
   @override
@@ -108,7 +121,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 leading: const Icon(Icons.message),
                 title: const Text('Message'),
                 onTap: () {
-                  Navigator.of(context).pop();
                   Navigator.of(context).pushNamed("/");
                 },
               ),
@@ -116,9 +128,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 leading: const Icon(Icons.equalizer),
                 title: const Text('Equalizer'),
                 onTap: () {
-                  Navigator.of(context).pop();
                   Navigator.of(context)
-                      .pushNamed("weather_gridview", arguments: futureWeather);
+                      .pushNamed("weather_gridview", arguments: _days);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.equalizer),
+                title: const Text('hello'),
+                onTap: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const HelloRoute()),
+                  // );
+                  Navigator.of(context).pushNamed("hello", arguments: _test);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.equalizer),
+                title: const Text('datatable'),
+                onTap: () {
+                  Navigator.of(context).pushNamed("datatable");
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.equalizer),
+                title: const Text('datatablefast'),
+                onTap: () {
+                  Navigator.of(context).pushNamed("datatablefast");
                 },
               ),
             ],
@@ -207,7 +243,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 future: futureWeather,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return CartesianChart(
+                    // return CartesianChart(
+                    //   days: snapshot.data!.days,
+                    // );
+                    _days = snapshot.data!.days!;
+                    return ScatterChart(
                       days: snapshot.data!.days,
                     );
                   } else if (snapshot.hasError) {
